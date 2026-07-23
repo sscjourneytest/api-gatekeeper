@@ -1,0 +1,28 @@
+name = "api-gatekeeper"
+main = "worker.js"
+compatibility_date = "2026-07-23"
+
+# ---------------------------------------------------------
+# Non-secret vars — safe to keep in this file.
+# These get set on every deploy, so they will NOT get wiped
+# or reset when GitHub Actions redeploys.
+# ---------------------------------------------------------
+[vars]
+GH_USER = "mockmatrixhub"
+GH_REPO = "content-store-v1"
+SUPABASE_URL = "https://duqmejyypqgkrjlpplrz.supabase.co"
+SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR1cW1lanl5cHFna3JqbHBwbHJ6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE2MDIyNTAsImV4cCI6MjA4NzE3ODI1MH0.aAIITdr-BS-D-TJHY1fEkqgN4CRVwsyz90d2I9IrhVc"
+
+# ---------------------------------------------------------
+# ⚠️ DO NOT put GH_TOKEN, SUPABASE_SERVICE_ROLE_KEY,
+# RAZORPAY_KEY_SECRET, or RAZORPAY_WEBHOOK_SECRET here.
+#
+# These are true secrets — set them once with:
+#   wrangler secret put GH_TOKEN
+#   wrangler secret put SUPABASE_SERVICE_ROLE_KEY
+#   wrangler secret put RAZORPAY_KEY_SECRET
+#   wrangler secret put RAZORPAY_WEBHOOK_SECRET
+#
+# Secrets persist across redeploys automatically —
+# `wrangler deploy` never touches or removes them.
+# ---------------------------------------------------------
